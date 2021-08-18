@@ -1,7 +1,8 @@
-import { INPUT } from './actions';
+import { INPUT, SUBMIT } from './actions';
 
 export const initialState = {
-  inputValue: ''
+  inputValue: '',
+  repositories: []
 };
 
 export const reducer = (state, action) => {
@@ -10,6 +11,10 @@ export const reducer = (state, action) => {
       return {
         ...state,
         inputValue: action.payload
+      }; 
+    case SUBMIT: 
+      return {
+        ...state,
       };
     default:
       return state;

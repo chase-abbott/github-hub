@@ -1,14 +1,14 @@
+/* eslint-disable max-len */
 import React from 'react';
-import { useDispatch, useReducerState } from '../../state/ContextProvider';
-import { inputAction } from '../../state/actions';
+import InputForm from './InputForm';
+import RepoList from './RepoList';
 
 export default function App() {
-  const dispatch = useDispatch();
-  const state = useReducerState();
+
   return (
-    <input 
-      value={state.inputValue}
-      onChange={({ target }) => dispatch(inputAction(target.value))}
-    />
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: '25px' }}>
+      <InputForm/>
+      <RepoList/>
+    </div>
   );
 }
