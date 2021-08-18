@@ -2,8 +2,25 @@
 
 exports[`App component renders App 1`] = `
 <DocumentFragment>
-  <h1>
-    Hello World
-  </h1>
+  <div
+    style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 25px;"
+  >
+    <label>
+       GitHub Username: 
+    </label>
+    <form
+      style="display: flex; flex-direction: column; align-items: center;"
+    >
+      <input
+        value=""
+      />
+      <button>
+         Search 
+      </button>
+    </form>
+    <ul
+      style="list-style: none;"
+    />
+  </div>
 </DocumentFragment>
 `;
