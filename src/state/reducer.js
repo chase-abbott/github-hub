@@ -15,6 +15,7 @@ export const reducer = (state, action) => {
     case SUBMIT: 
       return {
         ...state,
+        repositories: action.payload
       };
     default:
       return state;
