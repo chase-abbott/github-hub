@@ -13,7 +13,9 @@ export default function InputForm(){
   });
 
   useEffect(() => {
-    dispatch(submitAction(data));
+    if(data?.repositoryOwner){
+      dispatch(submitAction(data.repositoryOwner.repositories.edges));
+    }
   }, [data]);
 
   return (
