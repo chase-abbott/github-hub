@@ -16,3 +16,21 @@ query($login: String!){
   }
 }
 `;
+
+export const PULL_REQUESTS = gql`
+query($repository: String!, $owner: String!) { 
+  repository(name: $repository, owner: $owner){
+  createdAt,
+  pullRequests(first: 10, orderBy: {field: CREATED_AT, direction: DESC}){
+    edges {
+      node {
+        id,
+        changedFiles,
+        number,
+        state
+      }
+    }
+  }
+}
+}
+`;

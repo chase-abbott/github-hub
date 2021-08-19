@@ -5,6 +5,7 @@ import App from './App';
 import { ApolloProvider, createHttpLink, ApolloClient, InMemoryCache } from '@apollo/client';
 import { ContextProvider } from '../../state/ContextProvider';
 import { setContext } from '@apollo/client/link/context';
+import { MemoryRouter as Router } from 'react-router';
 
 const key = process.env.ACCESS_TOKEN;
 
@@ -32,7 +33,9 @@ describe('App component', () => {
     const { asFragment } = render(
       <ApolloProvider client={client}>
         <ContextProvider>
-          <App />
+          <Router>
+            <App />
+          </Router>
         </ContextProvider>
       </ApolloProvider>);
     expect(asFragment()).toMatchSnapshot();

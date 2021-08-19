@@ -1,14 +1,15 @@
 /* eslint-disable max-len */
 import React from 'react';
-import InputForm from './InputForm';
-import RepoList from './RepoList';
+import { Switch, Route } from 'react-router-dom';
+import Home from './Home';
+import RepoDetail from './RepoDetail';
 
 export default function App() {
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: '25px' }}>
-      <InputForm/>
-      <RepoList/>
-    </div>
+    <Switch>
+      <Route exact path="/" component={Home}/>
+      <Route exact path="/detail/:repoName" component={RepoDetail}/>
+    </Switch>
   );
 }

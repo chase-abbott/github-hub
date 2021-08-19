@@ -9,6 +9,7 @@ import {
   createHttpLink
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { BrowserRouter } from 'react-router-dom';
 
 const key = process.env.ACCESS_TOKEN;
 
@@ -34,7 +35,9 @@ const client = new ApolloClient({
 render(
   <ApolloProvider client={client}>
     <ContextProvider>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ContextProvider>
   </ApolloProvider>
   ,
